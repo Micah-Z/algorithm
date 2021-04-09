@@ -85,8 +85,11 @@ public class ReverseInteger {
 
             int res = 0;
             while (x != 0) {
+                // 得到最低位
                 int pop = x % 10;
+                // 去掉最高位
                 x /= 10;
+                // 检测是否溢出
                 if (res > (Integer.MAX_VALUE / 10) || ((res == Integer.MAX_VALUE) && pop > 7)) {
                     return 0;
                 }

@@ -70,6 +70,7 @@ public class ValidParentheses {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isValid(String s) {
+            // 解题思路:使用栈来进行匹配,进一个出一个,最后栈出完了就说明全部匹配完成
             Stack<Character> stack = new Stack<>();
             for (char c : s.toCharArray()) {
                 if (stack.isEmpty()){

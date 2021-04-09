@@ -59,7 +59,7 @@ public class LetterCombinationsOfAPhoneNumber {
             if (digits == null || "".equals(digits)) {
                 return res;
             }
-            Map<Character, String> map = new HashMap<>() {{
+            Map<Character, String> map = new HashMap<Character, String>() {{
                 put('2', "abc");
                 put('3', "def");
                 put('4', "ghi");

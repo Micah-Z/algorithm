@@ -56,6 +56,9 @@ public class ThreeSum {
     class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
 
+            // 解题思路:先排序,然后使用三个指针遍历,第一个指针和第二个指针从左往右遍历,第三个指针从右
+            // 往左遍历,如果三个数想加大于-num[i](i为第一个指针)第三个指针往左移动(小于的话不用移动,越移动越小了),
+            // 如果相等就添加到列表中,如果是其他情况就让第二个指针移动
             // 先排序,按照从小到大排列
             Arrays.sort(nums);
             List<List<Integer>> res = new ArrayList<>();

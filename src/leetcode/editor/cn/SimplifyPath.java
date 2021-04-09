@@ -79,6 +79,7 @@ public class SimplifyPath {
             // Queue<StringBuilder> stack = new LinkedList<>();
             Stack<String> stack = new Stack<>();
             List<String> pathList = new ArrayList<>();
+            // 将路径以 / 分割开，使pathList中不含有 / ,之后再加上 /
             for (int i = 0; i < path.length(); i++) {
                 if (path.charAt(i) != '/') {
                     int j = i;
@@ -90,14 +91,17 @@ public class SimplifyPath {
                 }
             }
             for (String s : pathList) {
+                // 当前路径不是 . 或者 .. 则直接入栈
                 if (!(".".equals(s) || "..".equals(s))){
                     stack.push(s);
                 }
+                // 遇到 .. 则要出栈,对于.则不用理会
                 if ("..".equals(s) && !stack.isEmpty()){
                     stack.pop();
                 }
             }
             if (!stack.isEmpty()){
+                // 这里可以使用双端队列来做，就不用转为数组获取栈底的数据了
                 String[] strings = stack.toArray(new String[0]);
                 StringBuilder sb = new StringBuilder();
                 sb.append("/");

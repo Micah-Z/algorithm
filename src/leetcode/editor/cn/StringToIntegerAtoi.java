@@ -1,4 +1,5 @@
-//请你来实现一个 myAtoi(string s) 函数，使其能将字符串转换成一个 32 位有符号整数（类似 C/C++ 中的 atoi 函数）。 
+//请你来实现一个 myAtoi(string s) 函数，
+// 使其能将字符串转换成一个 32 位有符号整数（类似 C/C++ 中的 atoi 函数）。
 //
 // 函数 myAtoi(string s) 的算法如下： 
 //
@@ -136,6 +137,10 @@ public class StringToIntegerAtoi {
 
 
         class Atoi {
+
+
+            // 思路:使用自动机,对每一步先定义好,然后遍历每一个字符,根据字符决定操作的步骤
+
             private long res = 0;
 
             private int assign = 1;
@@ -144,7 +149,7 @@ public class StringToIntegerAtoi {
 
             private boolean end = false;
 
-            private final Map<String, String[]> step = new HashMap<>() {
+            private final Map<String, String[]> step = new HashMap<String, String[]>() {
                 {
                     put("start", new String[]{"start", "assign", "inNumber", "end"});
                     put("assign", new String[]{"end", "end", "inNumber", "end"});

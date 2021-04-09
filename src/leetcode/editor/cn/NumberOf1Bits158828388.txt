@@ -1,0 +1,20 @@
+public class Solution {
+    // you need to treat n as an unsigned value
+    public int hammingWeight(int n) {
+        n = Math.abs(n);
+        String s = String.valueOf(n);
+        int count = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '1'){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+//total_testcases:601
+//total_correct:19
+//input_formatted:00000000000000000000000000001011
+//expected_output:3
+//code_output:2
